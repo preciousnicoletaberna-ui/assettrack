@@ -1,0 +1,75 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b3a14fa1b70765a08dff4f030adbba85",
+    "packages": [
+        {
+            "name": "globus-studio/phpqrcode",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MADEVAL/phpQRcode.git",
+                "reference": "7018dde856cdea424fb9d3530b531acaf269a9fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MADEVAL/phpQRcode/zipball/7018dde856cdea424fb9d3530b531acaf269a9fd",
+                "reference": "7018dde856cdea424fb9d3530b531acaf269a9fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4 <10.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.95",
+                "phpstan/phpstan": "^2.2",
+                "phpunit/phpunit": "^9.6||^10.5||^11.0"
+            },
+            "suggest": {
+                "ext-gd": "Required for PNG rendering (PngRenderer)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GlobusStudio\\QRCode\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yevhen Leonidov",
+                    "homepage": "https://github.com/MADEVAL"
+                }
+            ],
+            "description": "Zero-dependency QR Code generator for PHP 7.4-9.0. Dead simple API, full spec compliance, 100% test coverage.",
+            "keywords": [
+                "barcode",
+                "generator",
+                "php",
+                "qr",
+                "qr-code",
+                "qrcode"
+            ],
+            "support": {
+                "issues": "https://github.com/MADEVAL/phpQRcode/issues",
+                "source": "https://github.com/MADEVAL/phpQRcode/tree/v1.0.0"
+            },
+            "time": "2026-06-15T10:53:46+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
+}

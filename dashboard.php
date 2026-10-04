@@ -10,7 +10,20 @@ if (!isset($_SESSION["user_id"])) {
     exit();
 }
 
+$user_id = $_SESSION["user_id"];
 $name = $_SESSION["name"];
+
+// Get the workspaces owned by the logged-in user
+$sql = "SELECT workspace_id, workspace_name, workspace_code
+        FROM workspaces
+        WHERE owner_id = ?
+        ORDER BY created_at DESC";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+
+$result = $stmt->get_result();
 
 ?>
 
@@ -33,26 +46,61 @@ $name = $_SESSION["name"];
 
     <hr>
 
-    <h3>Asset Overview</h3>
+    <h2>Your Workspaces</h2>
 
-    <p>Total Assets: 0</p>
-    <p>Working: 0</p>
-    <p>Unrepaired: 0</p>
-    <p>Under Repair: 0</p>
-    <p>Repaired: 0</p>
+    <?php if ($result->num_rows > 0): ?>
 
-    <hr>
+        <?php while ($workspace = $result->fetch_assoc()): ?>
 
-    <h3>Quick Actions</h3>
+            <div>
 
-    <button>Add Asset</button>
-    <button>View Assets</button>
-    <button>View Reports</button>
+                <h3>
+                    <?php echo htmlspecialchars($workspace["workspace_name"]); ?>
+                </h3>
+
+                <p>
+                    Workspace Code:
+                    <?php echo htmlspecialchars($workspace["workspace_code"]); ?>
+                </p>
+
+                <a href="workspace.php?id=<?php echo $workspace["workspace_id"]; ?>">
+                    Open Workspace
+                </a>
+
+            </div>
+
+            <hr>
+
+        <?php endwhile; ?>
+
+    <?php else: ?>
+
+        <p>You don't have any workspaces yet.</p>
+
+        <a href="create_workspace.php">
+            Create a Workspace
+        </a>
+
+    <?php endif; ?>
+
+    <br>
+
+    <a href="create_workspace.php">
+        Create Another Workspace
+    </a>
 
     <br><br>
 
-    <a href="logout.php">Logout</a>
+    <a href="logout.php">
+        Logout
+    </a>
 
 </body>
 
 </html>
+
+<?php
+
+$stmt->close();
+
+?>

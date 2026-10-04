@@ -1,0 +1,7 @@
+/vendor/
+/composer.lock
+/.phpunit.cache/
+/coverage/
+/.php-cs-fixer.cache
+/qrcode.php
+/PLAN.md

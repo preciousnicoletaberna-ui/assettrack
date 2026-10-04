@@ -1,0 +1,38 @@
+{
+    "name": "globus-studio/phpqrcode",
+    "description": "Zero-dependency QR Code generator for PHP 7.4-9.0. Dead simple API, full spec compliance, 100% test coverage.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yevhen Leonidov",
+            "homepage": "https://github.com/MADEVAL"
+        }
+    ],
+    "keywords": ["qr", "qrcode", "qr-code", "barcode", "generator", "php"],
+    "require": {
+        "php": ">=7.4 <10.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.2",
+        "phpunit/phpunit": "^9.6||^10.5||^11.0"
+    },
+    "suggest": {
+        "ext-gd": "Required for PNG rendering (PngRenderer)"
+    },
+    "autoload": {
+        "psr-4": {
+            "GlobusStudio\\QRCode\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GlobusStudio\\QRCode\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
