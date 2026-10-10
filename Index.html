@@ -3,93 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AssetTrack - Login</title>
-
+    <title>AssetTrack</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="container">
+    <!-- The whole app is drawn into this box by script.js -->
+    <div id="app"></div>
 
-        <!-- LEFT SIDE -->
-        <div class="left-side">
-
-            <div class="logo">⬡</div>
-
-            <h1>AssetTrack</h1>
-
-            <p class="tagline">
-                Monitor · Maintain · Keep It Running
-            </p>
-
-            <p class="description">
-                A web-based asset monitoring and maintenance
-                reporting system that organizations can configure
-                for their own equipment and materials.
-            </p>
-
-        </div>
-
-
-        <!-- RIGHT SIDE -->
-        <div class="right-side">
-
-            <h2>Welcome Back!</h2>
-
-            <p class="subtitle">
-                Log in to your workspace
-            </p>
-
-            <form id="loginForm">
-
-                <label for="username">
-                    Email or Username
-                </label>
-
-                <input
-                    type="text"
-                    id="username"
-                    placeholder="Email or Username"
-                >
-
-
-                <label for="password">
-                    Password
-                </label>
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                >
-
-
-                <button type="submit">
-                    Login
-                </button>
-
-            </form>
-
-
-            <p class="account-text">
-                Don't have an account?
-            </p>
-
-            <button
-                type="button"
-                class="create-btn"
-                id="createAccount">
-                Create Workspace
-            </button>
-
-        </div>
-
-    </div>
-
+    <div id="menuRoot"></div>
+    <div id="modalRoot"></div>
+    <div id="printArea"></div>
+    <div id="toast" role="status"></div>
 
     <script src="script.js"></script>
-
 </body>
 </html>

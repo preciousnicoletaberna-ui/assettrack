@@ -1,235 +1,337 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* =========================================================
+   AssetTrack - style.css
+   Colors, fonts and sizes are all set in the :root block
+   below. Change them there to re-theme the whole app.
+   ========================================================= */
+
+:root {
+    --navy: #0b2a66;
+    --navy-deep: #071d4a;
+    --blue: #1a5ce5;
+    --blue-dark: #1449bd;
+    --blue-soft: #e6eeff;
+    --bg: #f3f6fb;
+    --card: #ffffff;
+    --ink: #0f1f3d;
+    --muted: #6b7a95;
+    --line: #e3e9f3;
+
+    --green: #22b35e;
+    --green-soft: #dcf5e6;
+    --green-ink: #178a4c;
+    --amber: #f5b13d;
+    --amber-soft: #fff3d9;
+    --amber-ink: #a86300;
+    --orange: #f28a1e;
+    --red: #e8433c;
+    --red-soft: #fde4e3;
+    --red-ink: #c0302a;
+
+    --radius: 10px;
+    --shadow: 0 1px 2px rgba(15, 31, 61, .06), 0 4px 16px rgba(15, 31, 61, .04);
+    --font: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* background picture used on the login and "Report Submitted" screens (filled in below) */
+    --scene: url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1600 1000%22 preserveAspectRatio=%22xMidYMid slice%22%3E%3Cdefs%3E%3ClinearGradient id=%22s%22 x1=%220%22 y1=%220%22 x2=%220%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%232b6fd6%22/%3E%3Cstop offset=%221%22 stop-color=%22%23bcd8f5%22/%3E%3C/linearGradient%3E%3ClinearGradient id=%22b%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23cfe3fa%22/%3E%3Cstop offset=%221%22 stop-color=%22%235d8fd0%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221600%22 height=%221000%22 fill=%22url%28%23s%29%22/%3E%3Crect x=%22520%22 y=%22140%22 width=%22620%22 height=%22860%22 fill=%22url%28%23b%29%22/%3E%3Crect x=%22300%22 y=%22360%22 width=%22240%22 height=%22640%22 fill=%22%237aa5de%22/%3E%3Crect x=%221120%22 y=%22300%22 width=%22260%22 height=%22700%22 fill=%22%236e9bd8%22/%3E%3Crect x=%22536%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22160%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22206%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22252%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22298%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22344%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22390%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22436%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22482%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22528%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22574%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22620%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22666%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22712%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22758%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22804%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22850%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22896%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22942%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22536%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22588%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22640%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22692%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22744%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22796%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22848%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22900%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22952%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221004%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221056%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221108%22 y=%22988%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22380%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22380%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22380%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22380%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22426%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22426%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22426%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22426%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22472%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22472%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22472%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22472%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22518%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22518%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22518%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22518%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22564%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22564%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22564%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22564%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22610%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22610%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22610%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22610%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22656%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22656%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22656%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22656%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22702%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22702%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22702%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22702%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22748%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22748%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22748%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22748%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22794%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22794%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22794%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22794%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22840%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22840%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22840%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22840%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22886%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22886%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22886%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22886%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22932%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22932%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22932%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22932%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22316%22 y=%22978%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22368%22 y=%22978%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22420%22 y=%22978%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%22472%22 y=%22978%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22320%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22320%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22320%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22320%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22320%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22366%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22366%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22366%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22366%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22366%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22412%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22412%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22412%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22412%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22412%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22458%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22458%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22458%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22458%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22458%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22504%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22504%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22504%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22504%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22504%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22550%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22550%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22550%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22550%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22550%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22596%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22596%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22596%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22596%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22596%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22642%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22642%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22642%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22642%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22642%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22688%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22688%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22688%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22688%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22688%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22734%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22734%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22734%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22734%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22734%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22780%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22780%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22780%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22780%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22780%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22826%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22826%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22826%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22826%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22826%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22872%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22872%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22872%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22872%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22872%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22918%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22918%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22918%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22918%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22918%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221136%22 y=%22964%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221188%22 y=%22964%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221240%22 y=%22964%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221292%22 y=%22964%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect x=%221344%22 y=%22964%22 width=%2234%22 height=%2228%22 fill=%22%23ffffff%22 opacity=%220.45%22/%3E%3Crect y=%22900%22 width=%221600%22 height=%22100%22 fill=%22%232e8b57%22/%3E%3Ccircle cx=%2240%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3Ccircle cx=%22210%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3Ccircle cx=%22380%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3Ccircle cx=%22550%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3Ccircle cx=%22720%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3Ccircle cx=%22890%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3Ccircle cx=%221060%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3Ccircle cx=%221230%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3Ccircle cx=%221400%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3Ccircle cx=%221570%22 cy=%22900%22 r=%2262%22 fill=%22%231f7a46%22/%3E%3C/svg%3E");
 }
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
 
 body {
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: #eef3f8;
-}
-
-
-/* MAIN CONTAINER */
-
-.container {
-    width: 900px;
-    min-height: 520px;
-
-    display: flex;
-
-    background: white;
-
-    border-radius: 8px;
-
-    overflow: hidden;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-
-/* LEFT SIDE */
-
-.left-side {
-    width: 55%;
-
-    background: linear-gradient(
-        rgba(7, 35, 65, 0.93),
-        rgba(7, 35, 65, 0.93)
-    );
-
-    color: white;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 50px;
-}
-
-.logo {
-    font-size: 55px;
-    margin-bottom: 5px;
-}
-
-.left-side h1 {
-    font-size: 34px;
-    margin-bottom: 8px;
-}
-
-.tagline {
+    font-family: var(--font);
     font-size: 14px;
-    letter-spacing: 1px;
-
-    margin-bottom: 45px;
+    line-height: 1.5;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
 }
 
-.description {
-    max-width: 350px;
+h1, h2, h3, p { margin: 0; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; border: 0; background: none; }
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.hide { display: none !important; }
+.muted { color: var(--muted); }
+.small { font-size: 12.5px; }
 
-    font-size: 13px;
-
-    line-height: 1.7;
-
-    color: #dce8f5;
+svg.i {
+    width: 18px; height: 18px; flex: none;
+    fill: none; stroke: currentColor; stroke-width: 1.9;
+    stroke-linecap: round; stroke-linejoin: round;
 }
 
+/* ---------- buttons ---------- */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 10px 18px; border-radius: 8px; font-weight: 600;
+    background: var(--blue); color: #fff; border: 1px solid var(--blue);
+    transition: background .15s;
+}
+.btn:hover { background: var(--blue-dark); text-decoration: none; }
+.btn.outline { background: #fff; color: var(--blue); }
+.btn.outline:hover { background: var(--blue-soft); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { background: var(--bg); }
+.btn.danger { background: var(--red); border-color: var(--red); }
+.btn.wide { width: 100%; }
+.btn.sm { padding: 6px 12px; font-size: 13px; }
+.btn[disabled] { opacity: .55; cursor: not-allowed; }
 
-/* RIGHT SIDE */
+/* ---------- forms ---------- */
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; min-width: 0; }
+.field > label { font-weight: 600; font-size: 13px; }
+.field > label em { color: var(--red); font-style: normal; }
+.input, .field input, .field select, .field textarea, .filters input, .filters select {
+    width: 100%; padding: 10px 12px; border: 1px solid #d3dbe9; border-radius: 8px;
+    background: #fff; min-width: 0;
+}
+.field textarea { min-height: 110px; resize: vertical; }
+.field input[readonly], .field input:disabled { background: #eef2f9; color: #55657f; }
+.field .hint { font-size: 12px; color: var(--muted); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.input-wrap { position: relative; }
+.input-wrap > svg.i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.input-wrap input { padding-left: 38px; }
+.input-wrap .eye { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); color: var(--muted); padding: 6px; border-radius: 6px; display: grid; }
+.input-wrap .eye:hover { background: var(--bg); }
+.error { color: var(--red-ink); background: var(--red-soft); border-radius: 8px; padding: 9px 12px; font-size: 13px; margin-bottom: 12px; }
+.checkrow { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; margin-bottom: 14px; }
+.checkrow input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--blue); }
 
-.right-side {
-    width: 45%;
+/* ---------- login / create workspace ---------- */
+.auth { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; }
+.auth-hero {
+    background: linear-gradient(rgba(9, 32, 86, .82), rgba(7, 26, 70, .93)), var(--scene) center / cover;
+    color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 48px 32px; gap: 14px;
+}
+.auth-hero .cube { width: 96px; height: 96px; }
+.auth-hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; letter-spacing: -.02em; }
+.auth-hero .tag { font-size: 16px; letter-spacing: .02em; opacity: .95; }
+.auth-hero .tag b { opacity: .55; font-weight: 400; margin: 0 6px; }
+.auth-hero p.blurb { max-width: 340px; margin-top: 22px; opacity: .88; line-height: 1.7; }
+.auth-panel { display: grid; place-items: center; background: #fff; padding: 32px 24px; }
+.auth-card { width: 100%; max-width: 400px; }
+.auth-card h2 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+.auth-card .sub { color: var(--blue); margin-bottom: 26px; }
+.auth-card .or { text-align: center; margin: 22px 0 10px; font-size: 13px; color: var(--muted); }
+.demo-note { margin-top: 18px; background: var(--bg); border-radius: 8px; padding: 10px 12px; font-size: 12.5px; color: var(--muted); text-align: center; }
+.demo-note b { color: var(--ink); }
 
-    padding: 55px 50px;
+/* ---------- app shell ---------- */
+.shell { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 100vh; }
+.sidebar {
+    background: var(--navy); color: #fff; position: sticky; top: 0; height: 100vh;
+    display: flex; flex-direction: column; padding: 20px 14px; gap: 22px; z-index: 40;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; padding: 0 8px; letter-spacing: -.01em; }
+.brand .cube { width: 34px; height: 34px; }
+.nav { display: flex; flex-direction: column; gap: 4px; }
+.nav a {
+    display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 8px;
+    color: rgba(255, 255, 255, .86); font-weight: 500; text-decoration: none;
+}
+.nav a:hover { background: rgba(255, 255, 255, .08); }
+.nav a.active { background: var(--blue); color: #fff; font-weight: 600; }
+.sidebar .foot { margin-top: auto; font-size: 12px; color: rgba(255, 255, 255, .55); padding: 0 8px; }
 
-    display: flex;
-    flex-direction: column;
+.main { min-width: 0; display: flex; flex-direction: column; }
+.topbar {
+    height: 64px; background: #fff; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 28px;
+    position: sticky; top: 0; z-index: 30;
+}
+.topbar .ws { font-weight: 600; font-size: 13px; margin-left: auto; margin-right: 22px; }
+.burger { display: none; padding: 8px; border-radius: 8px; }
+.userbtn { display: flex; align-items: center; gap: 10px; font-weight: 600; padding: 6px 8px; border-radius: 8px; }
+.userbtn:hover { background: var(--bg); }
+.avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 13px; }
+.content { padding: 28px; display: flex; flex-direction: column; gap: 20px; max-width: 1280px; width: 100%; }
+.page-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.page-head h1 { font-size: 24px; font-weight: 800; letter-spacing: -.01em; }
+.page-head p { color: var(--muted); font-size: 13px; margin-top: 2px; }
 
-    justify-content: center;
+/* ---------- dashboard ---------- */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shadow); min-width: 0; text-align: left; }
+button.stat:hover { border-color: #c7d5ee; }
+.sicon { width: 56px; height: 56px; border-radius: 12px; display: grid; place-items: center; color: #fff; flex: none; }
+.sicon svg.i { width: 28px; height: 28px; }
+.sicon.blue { background: var(--blue); } .sicon.green { background: var(--green); }
+.sicon.orange { background: var(--orange); } .sicon.red { background: var(--red); }
+.stat .lbl { font-size: 12.5px; color: var(--muted); }
+.stat .num { font-size: 30px; font-weight: 800; line-height: 1.15; }
+.stat .sub { font-size: 12px; font-weight: 600; }
+.t-green { color: var(--green-ink); } .t-orange { color: var(--orange); } .t-red { color: var(--red); } .t-blue { color: var(--blue); }
+
+.grid2 { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 16px; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; box-shadow: var(--shadow); min-width: 0; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.panel-head h2 { font-size: 16px; font-weight: 700; }
+.panel-head a { font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+
+.donut-wrap { display: flex; align-items: center; justify-content: space-around; gap: 16px; flex-wrap: wrap; padding: 6px 0; }
+.donut { position: relative; width: 170px; height: 170px; flex: none; }
+.donut svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.donut .mid { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.donut .mid b { font-size: 30px; line-height: 1; font-weight: 800; }
+.donut .mid span { font-size: 12px; color: var(--muted); }
+.legend { display: flex; flex-direction: column; gap: 12px; min-width: 190px; flex: 1; }
+.legend div { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.legend i { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.legend span.n { margin-left: auto; font-weight: 600; white-space: nowrap; }
+
+/* ---------- tables ---------- */
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th { text-align: left; font-size: 12px; font-weight: 600; color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 12px; border-bottom: 1px solid #eef2f8; font-size: 13px; vertical-align: middle; }
+tr:last-child td { border-bottom: 0; }
+td.issue { max-width: 260px; overflow-wrap: anywhere; }
+.pill { display: inline-block; padding: 2px 11px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid transparent; white-space: nowrap; }
+.pill.progress { background: var(--blue-soft); color: var(--blue); border-color: #bcd2ff; }
+.pill.open, .pill.maint { background: var(--amber-soft); color: var(--amber-ink); border-color: #f6d9a2; }
+.pill.resolved, .pill.active { background: var(--green-soft); color: var(--green-ink); border-color: #b4e6c9; }
+.pill.inactive { background: var(--red-soft); color: var(--red-ink); border-color: #f6bcb9; }
+.pill.high { background: var(--red-soft); color: var(--red-ink); }
+.iconbtn { width: 32px; height: 32px; border-radius: 8px; display: inline-grid; place-items: center; color: var(--ink); }
+.iconbtn:hover { background: var(--bg); }
+.qrmini { color: var(--ink); }
+.empty { text-align: center; padding: 36px 12px; color: var(--muted); }
+
+.filters { display: grid; grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr)); gap: 12px; }
+.filters .search { position: relative; }
+.filters .search svg.i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); }
+.filters .search input { padding-left: 38px; }
+.pager { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.pages { display: flex; gap: 6px; }
+.pages button { min-width: 32px; height: 32px; border-radius: 6px; border: 1px solid var(--line); background: #fff; font-weight: 600; padding: 0 8px; }
+.pages button.on { background: var(--blue); border-color: var(--blue); color: #fff; }
+.pages button:disabled { opacity: .45; cursor: default; }
+
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tabs button { padding: 8px 20px; border-radius: 6px; border: 1px solid var(--line); background: #fff; font-weight: 600; }
+.tabs button.on { background: var(--blue); border-color: var(--blue); color: #fff; }
+.tabs button small { opacity: .75; margin-left: 4px; }
+select.inline { padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: #fff; font-size: 13px; }
+
+/* ---------- QR page ---------- */
+.qr-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.qr-label {
+    width: 240px; max-width: 100%; margin: 18px auto; padding: 16px; text-align: center;
+    border: 1px solid var(--line); border-radius: 10px; background: #fff;
+}
+.qr-label .t { font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--navy); }
+.qr-label .t .cube { width: 16px; height: 16px; }
+.qr-label svg.qr { width: 100%; height: auto; display: block; margin: 8px 0; }
+.qr-label b { display: block; font-size: 15px; }
+.qr-label span { display: block; font-size: 12px; color: var(--muted); }
+.btnrow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.preview-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.preview-row svg.qr { width: 120px; height: 120px; border: 1px solid var(--line); border-radius: 8px; flex: none; }
+
+/* ---------- report a problem (public page) ---------- */
+.plain { min-height: 100vh; padding: 36px 16px; background: var(--bg); }
+.plain-in { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.plain .backlink { max-width: 920px; margin: 0 auto 14px; display: block; font-weight: 600; }
+.rep-head { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+.rep-head .ico { width: 56px; height: 56px; border-radius: 12px; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; flex: none; }
+.rep-head .ico svg.i { width: 30px; height: 30px; }
+.rep-head h1 { font-size: 20px; font-weight: 800; }
+.asset-card .big { display: flex; gap: 14px; align-items: center; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.asset-card .big .ico { width: 56px; height: 56px; border-radius: 12px; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; flex: none; }
+.asset-card .big .ico svg.i { width: 30px; height: 30px; }
+.asset-card dl { margin: 0; display: grid; gap: 12px; }
+.asset-card dt { font-size: 12px; color: var(--muted); }
+.asset-card dd { margin: 2px 0 0; font-weight: 600; }
+
+/* ---------- report submitted ---------- */
+.photo-page {
+    min-height: 100vh; display: flex; flex-direction: column;
+    background: linear-gradient(rgba(9, 32, 86, .55), rgba(7, 26, 70, .72)), var(--scene) center / cover;
+}
+.photo-top { background: rgba(7, 29, 74, .92); color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
+.photo-top .brand { padding: 0; }
+.photo-mid { flex: 1; display: grid; place-items: center; padding: 28px 16px; }
+.done-card { background: #fff; border-radius: 14px; max-width: 420px; width: 100%; padding: 34px 28px; text-align: center; box-shadow: 0 20px 60px rgba(0, 0, 0, .35); }
+.done-card .ok { width: 64px; height: 64px; border-radius: 50%; background: var(--green-soft); display: grid; place-items: center; margin: 0 auto 16px; color: var(--green); }
+.done-card .ok svg.i { width: 34px; height: 34px; stroke-width: 3; }
+.done-card h1 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+.done-card p { color: var(--muted); margin-bottom: 22px; }
+.photo-foot { text-align: center; color: rgba(255, 255, 255, .8); font-size: 12px; padding: 14px; }
+
+/* ---------- popups ---------- */
+.modal-bg { position: fixed; inset: 0; background: rgba(8, 20, 48, .55); z-index: 80; display: grid; place-items: center; padding: 16px; overflow: auto; }
+.modal { background: #fff; border-radius: 14px; width: 100%; max-width: 480px; padding: 22px; box-shadow: 0 24px 70px rgba(0, 0, 0, .35); max-height: calc(100vh - 32px); overflow: auto; }
+.modal.wide { max-width: 720px; }
+.modal h2 { font-size: 19px; font-weight: 800; margin-bottom: 4px; }
+.modal .sub { color: var(--muted); margin-bottom: 16px; }
+.modal .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; flex-wrap: wrap; }
+.pick-list { border: 1px solid var(--line); border-radius: 8px; max-height: 280px; overflow: auto; margin-bottom: 14px; }
+.pick-list label { display: flex; gap: 10px; align-items: center; padding: 8px 12px; border-bottom: 1px solid #eef2f8; cursor: pointer; }
+.pick-list label:last-child { border-bottom: 0; }
+.bulk-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin: 14px 0; }
+.bulk-grid .qr-label { width: auto; margin: 0; padding: 10px; }
+
+.dropdown { position: fixed; z-index: 90; background: #fff; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 12px 36px rgba(15, 31, 61, .2); padding: 6px; min-width: 190px; }
+.dropdown button { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 9px 10px; border-radius: 6px; font-weight: 500; }
+.dropdown button:hover { background: var(--bg); }
+.dropdown button.danger { color: var(--red-ink); }
+.dropdown hr { border: 0; border-top: 1px solid var(--line); margin: 4px 0; }
+
+#toast {
+    position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 20px); background: var(--navy); color: #fff;
+    padding: 11px 18px; border-radius: 10px; font-weight: 600; opacity: 0; transition: .25s; z-index: 120;
+    pointer-events: none; max-width: 90vw; text-align: center; box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
+}
+#toast.on { opacity: 1; transform: translate(-50%, 0); }
+.bars { display: flex; flex-direction: column; gap: 12px; }
+.bar-row .top { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px; }
+.bar-row .track { height: 8px; background: var(--bg); border-radius: 99px; overflow: hidden; }
+.bar-row .fill { height: 100%; background: var(--blue); border-radius: 99px; }
+.cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.setting-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+
+/* ---------- print (QR labels) ---------- */
+#printArea { display: none; }
+@media print {
+    body { background: #fff; }
+    #app, #modalRoot, #menuRoot, #toast { display: none !important; }
+    #printArea { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 8mm; }
+    #printArea .qr-label { margin: 0; break-inside: avoid; width: auto; }
 }
 
-.right-side h2 {
-    color: #0b2d50;
-
-    font-size: 25px;
-
-    margin-bottom: 8px;
+/* ---------- phones and small screens ---------- */
+@media (max-width: 1100px) {
+    .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid2, .qr-grid { grid-template-columns: minmax(0, 1fr); }
 }
-
-.subtitle {
-    color: #68798a;
-
-    font-size: 13px;
-
-    margin-bottom: 30px;
+@media (max-width: 860px) {
+    .auth { grid-template-columns: minmax(0, 1fr); }
+    .auth-hero { padding: 36px 20px; }
+    .auth-hero .cube { width: 64px; height: 64px; }
+    .auth-hero p.blurb { margin-top: 6px; }
+    .shell { grid-template-columns: minmax(0, 1fr); }
+    .sidebar { position: fixed; left: 0; top: 0; bottom: 0; width: 250px; transform: translateX(-100%); transition: transform .2s; }
+    .sidebar.open { transform: none; box-shadow: 0 0 0 100vmax rgba(8, 20, 48, .5); }
+    .burger { display: grid; }
+    .topbar { padding: 0 14px; }
+    .topbar .ws { display: none; }
+    .userbtn { margin-left: auto; }
+    .content { padding: 18px 14px; }
+    .filters { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .filters .search { grid-column: 1 / -1; }
+    .plain-in { grid-template-columns: minmax(0, 1fr); }
+    .cards3, .setting-grid { grid-template-columns: minmax(0, 1fr); }
 }
-
-
-/* LABEL */
-
-label {
-    display: block;
-
-    color: #34495e;
-
-    font-size: 13px;
-
-    margin-bottom: 7px;
+@media (max-width: 520px) {
+    .stats { grid-template-columns: minmax(0, 1fr); }
+    .row2, .btnrow { grid-template-columns: minmax(0, 1fr); }
+    .userbtn .nm { display: none; }
 }
-
-
-/* INPUT */
-
-input {
-    width: 100%;
-
-    height: 43px;
-
-    padding: 0 13px;
-
-    margin-bottom: 18px;
-
-    border: 1px solid #ccd5df;
-
-    border-radius: 5px;
-
-    outline: none;
-
-    font-size: 13px;
-}
-
-input:focus {
-    border-color: #1473e6;
-}
-
-
-/* LOGIN BUTTON */
-
-form button {
-    width: 100%;
-
-    height: 43px;
-
-    border: none;
-
-    border-radius: 5px;
-
-    background: #1473e6;
-
-    color: white;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #0d5fc4;
-}
-
-
-/* CREATE ACCOUNT */
-
-.account-text {
-    text-align: center;
-
-    color: #68798a;
-
-    font-size: 12px;
-
-    margin-top: 28px;
-
-    margin-bottom: 12px;
-}
-
-.create-btn {
-    width: 100%;
-
-    height: 43px;
-
-    background: white;
-
-    border: 1px solid #1473e6;
-
-    border-radius: 5px;
-
-    color: #1473e6;
-
-    cursor: pointer;
-
-    font-size: 13px;
-}
-
-.create-btn:hover {
-    background: #f0f6ff;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 750px) {
-
-    .container {
-        width: 95%;
-    }
-
-    .left-side {
-        display: none;
-    }
-
-    .right-side {
-        width: 100%;
-    }
-}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
