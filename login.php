@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 require_once "config/database.php";
@@ -7,11 +6,12 @@ require_once "config/database.php";
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $email = $_POST["email"];
+    $email = trim($_POST["email"]);
     $password = $_POST["password"];
 
-    $sql = "SELECT user_id, name, email, password FROM users WHERE email = ?";
+    $sql = "SELECT user_id, name, email, password
+            FROM users
+            WHERE email = ?";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
@@ -20,81 +20,113 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows == 1) {
-
         $user = $result->fetch_assoc();
 
         if (password_verify($password, $user["password"])) {
-
             $_SESSION["user_id"] = $user["user_id"];
             $_SESSION["name"] = $user["name"];
             $_SESSION["email"] = $user["email"];
 
             header("Location: dashboard.php");
             exit();
-
         } else {
-
-            $message = "Incorrect password.";
-
+            $message = "Incorrect email or password.";
         }
-
     } else {
-
-        $message = "Account not found.";
-
+        $message = "Incorrect email or password.";
     }
 
     $stmt->close();
 }
-
 ?>
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>AssetTrack - Login</title>
 
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <h1>AssetTrack</h1>
+    <div class="container">
 
-    <h2>Login</h2>
+        <div class="left-side">
+            <div class="logo">⬡</div>
 
-    <?php if ($message != ""): ?>
+            <h1>AssetTrack</h1>
 
-        <p><?php echo htmlspecialchars($message); ?></p>
+            <p class="tagline">
+                Monitor · Maintain · Keep It Running
+            </p>
 
-    <?php endif; ?>
+            <p class="description">
+                A web-based asset monitoring and maintenance
+                reporting system that organizations can configure
+                for their own equipment and materials.
+            </p>
+        </div>
 
-    <form method="POST">
+        <div class="right-side">
 
-        <label>Email:</label>
-        <br>
+            <h2>Welcome Back!</h2>
 
-        <input type="email" name="email" required>
+            <p class="subtitle">
+                Log in to your workspace
+            </p>
 
-        <br><br>
+            <?php if ($message !== ""): ?>
+                <p class="error-message">
+                    <?php echo htmlspecialchars($message); ?>
+                </p>
+            <?php endif; ?>
 
-        <label>Password:</label>
-        <br>
+            <form id="loginForm" method="POST" action="login.php">
 
-        <input type="password" name="password" required>
+                <label for="email">Email</label>
 
-        <br><br>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
 
-        <button type="submit">Login</button>
+                <label for="password">Password</label>
 
-    </form>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
 
-    <p>
-        Don't have an account?
-        <a href="register.php">Register</a>
-    </p>
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="account-text">
+                Don't have an account?
+            </p>
+
+            <a href="register.php" class="create-btn">
+                Create Account
+            </a>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
 
 </body>
-
 </html>
